@@ -1,0 +1,86 @@
+CREATE PROJECT : npx create-react-app NAME_APP
+
+- State: lưu các giá trị nội tại của component, bên ngoài ko thể truy xuất và thay đổi đc nó
+   setState();
+
+- handing events: cách xử lý sự kiện
+
+- prop là 1 thằng readonly, ko thay đổi
+
+- component chỉ render lại khi mà state or prop thay đổi
+
+- immutability: khả năng ko thay đổi của 1 trạng thái bên trong của một object nào đấy
+
+    primitive type: string , bolean, number bản thân là 1 immutabale
+    arr và ob có thể mutable
+
+- propertis childrend của props
+
+- propTypes: thuộc tính của component để check validate prop của component đó
+
+- react.createRef()
+
+- Component life cycles
+
+- tích hợp boostrap
+    add reacttrap: npm install --save reactstrap
+    add boostrap: npm install --save bootstrap
+
+- storybook: doc để hướng dẫn dử dug các component ntn
+
+- function stateless component
+  cách định nghĩa component: nhận vào props và trả về  UI 
+  còn cách dùng class : implement một method là render trả về component
+
+    import React from 'react';
+    import './App.css';
+
+    //function stateless: ko có state, ko có life cycle
+    function App(props) {
+      const {heading, content} = props
+      return (
+        <div className="App">
+          <Accordion heading="heading" content="content" />
+        </div>
+      );
+    }
+
+    export default App;
+
+- react router: thư viện react router
+
+- higher order components
+  Cơ bản có thể hiểu, HOCs là một kỹ thuật nâng cao trong React để dựng lại các component, vì là kỹ thuật nên đương nhiên sẽ không nằm trong React API. Nó là một pattern tuyệt vời, được implement trong các component như một function (có thể thấy điều đó ở 2 ví dụ trên kia :v)
+  Cụ thể, HOCs là một function, nhận vào một component và trả về component mới:
+  const EnhancedComponent = higherOrderComponent(WrappedComponent);
+
+  http://vuilaptrinh.com/2018-03-02-huong-dan-gioi-thieu-higher-order-component-trong-react/
+
+- render props
+  Nói một cách dễ hiểu là Render Props là một thủ thuật giúp chúng ta sử dụng lại logic
+  của một Component cho một Component khác. Render Props được sử dụng như một props với
+  giá trị là một function.
+
+  Kỹ thuật render props sử dụng 1 props là function trả về React Element,
+  và component sẽ render giá trị trả về của hàm đó thay vì trực tiếp render 
+  React Element như thông thường
+
+- context api
+  provider
+  consumer
+
+- function setState() là hàm xử lý đồng bộ
+  => xử lý bất đồng bộ
+  this.setState(state => {
+    return {
+      value: state.value + 1
+    }
+  })
+
+- react hook useState: sdug trong function stateless component
+
+  import React, { useState } from 'react
+
+  const [count, setCount] = useState(0);
+
+- react hook useContext 
